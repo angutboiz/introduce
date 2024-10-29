@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@500&family=Open+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Big+Shoulders+Text:wght@500&family=Open+Sans:wght@500&display=swap");
 *,
 *:before,
 *:after {
@@ -38,7 +38,7 @@ body {
     font-size: 16px;
     line-height: 1;
     font-family: "Big Shoulders Text", sans-serif;
-    background-image: linear-gradient(to bottom right, #ff3232, #ff4545);
+    background-color: #ff3333;
 }
 
 a {
@@ -54,6 +54,8 @@ header {
     display: flex;
     justify-content: center;
     position: fixed;
+    z-index: 99;
+
     top: 0;
     width: 100%;
 }
@@ -94,7 +96,7 @@ header .nav {
     left: -35px;
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
-    border-bottom: 50px solid #ff4545;
+    border-bottom: 50px solid #ff3333;
 }
 
 .nav::after {
@@ -106,7 +108,7 @@ header .nav {
     right: -35px;
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
-    border-bottom: 50px solid #f84c4c;
+    border-bottom: 50px solid #ff3333;
 }
 
 section {
@@ -114,6 +116,9 @@ section {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0;
 }
 
 .box {
@@ -148,4 +153,62 @@ section {
 
 .box-bottom p {
     line-height: 30px;
+}
+
+.box-solid {
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    color: #fff;
+    border: 3px dashed rgba(255, 255, 255, 0.5);
+}
+
+.box-solid h3 {
+    font-size: 80px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.box-solid p {
+    font-size: 40px;
+    line-height: 45px;
+}
+
+.box-y {
+    border: none;
+    border-radius: 0;
+    border-top: 3px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box-y img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.box-y .history {
+    color: #fff;
+    width: 900px;
+}
+
+.box-y .history h3 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.box-y .history p {
+    font-size: 24px;
+    line-height: 35px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
 }
